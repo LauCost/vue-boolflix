@@ -1,16 +1,29 @@
 <template>
-  <Header>
-    <Search />
-  </Header>
+  <Header> </Header>
 </template>
 
 <script>
-import Search from "./Content Header/SearchBar.vue";
+/* import Search from "./Content Header/SearchBar.vue";
 export default {
   components: {
     Search,
   },
-};
+
+  data() {
+    return {
+      searchFilm: "",
+    };
+  },
+
+  methods: {
+    getTitle(text) {
+      console.log(text);
+      this.searchFilm = text;
+
+      console.log(this.searchFilm);
+    },
+  },
+}; */
 </script>
 
 

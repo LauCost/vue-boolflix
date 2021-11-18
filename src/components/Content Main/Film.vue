@@ -21,7 +21,7 @@ export default {
     Titolo: String,
     NomeOriginale: String,
     LinguaOriginale: String,
-    Voto: String,
+    Voto: Number,
   },
 };
 </script>

@@ -1,10 +1,19 @@
 <template>
   <div class="search">
-    <input type="text" placeholder="Search.." />
-    <button>Search</button>
+    <input v-model="searchString" type="text" placeholder="Search.." />
+    <button @click="$emit('search-film', searchString)">Search</button>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      searchString: "",
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 .search {
