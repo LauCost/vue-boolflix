@@ -1,20 +1,12 @@
 <template>
-  <Header>
-    <div class="search">
-      <input type="text" placeholder="Search.." />
-      <button>Search</button>
-    </div>
-  </Header>
+  <div class="search">
+    <input type="text" placeholder="Search.." />
+    <button>Search</button>
+  </div>
 </template>
 
 
-
-
 <style lang="scss">
-header {
-  background-color: #2e3a46;
-}
-
 .search {
   display: flex;
   justify-content: center;
