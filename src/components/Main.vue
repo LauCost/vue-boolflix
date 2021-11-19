@@ -9,6 +9,14 @@
       :LinguaOriginale="film.original_language"
       :Voto="film.vote_average"
     />
+    <TvShows
+      v-for="show in shows"
+      :key="show.id"
+      :TitoloTV="show.name"
+      :NomeOriginaleTV="original_name"
+      :LinguaOriginaleTV="show.original_language"
+      :VotoTV="show.vote_average"
+    />
   </main>
 </template>
 
@@ -16,16 +24,19 @@
 import axios from "axios";
 import Movie from "./Content Main/Film.vue";
 import Search from "./Content Main/SearchBar.vue";
+import TvShows from "./Content Main/TvShows.vue";
 export default {
   data() {
     return {
       movies: [],
+      shows: [],
     };
   },
 
   components: {
     Movie,
     Search,
+    TvShows,
   },
 
   methods: {
@@ -39,6 +50,16 @@ export default {
         )
         .then((r) => {
           this.movies = r.data.results;
+        });
+
+      axios
+        .get(
+          "https://api.themoviedb.org/3/search/tv?api_key=58ebf4fc2efccc2902a38beabf175722&language=en-US&page=1&query=" +
+            text +
+            "&include_adult=false"
+        )
+        .then((res) => {
+          this.shows = res.data.results;
         });
     },
   },

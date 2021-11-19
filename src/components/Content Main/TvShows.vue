@@ -1,31 +1,33 @@
 <template>
   <div class="cont">
-    <h1>Films</h1>
+    <h1>TV Shows</h1>
     <h2>
-      {{ Titolo }}
+      {{ TitoloTV }}
     </h2>
     <h3>
-      {{ NomeOriginale }}
+      {{ NomeOriginaleTV }}
     </h3>
     <p>
-      {{ LinguaOriginale }}
+      {{ LinguaOriginaleTV }}
     </p>
     <p>
-      {{ Voto }}
+      {{ VotoTV }}
     </p>
   </div>
 </template>
 
+
 <script>
 export default {
   props: {
-    Titolo: String,
-    NomeOriginale: String,
-    LinguaOriginale: String,
-    Voto: Number,
+    TitoloTV: String,
+    NomeOriginaleTV: String,
+    LinguaOriginaleTV: String,
+    VotoTV: Number,
   },
 };
 </script>
+
 
 <style lang="scss">
 .cont {
