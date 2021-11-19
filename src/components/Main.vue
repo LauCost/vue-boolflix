@@ -13,7 +13,7 @@
       v-for="show in shows"
       :key="show.id"
       :TitoloTV="show.name"
-      :NomeOriginaleTV="original_name"
+      :NomeOriginaleTV="show.original_name"
       :LinguaOriginaleTV="show.original_language"
       :VotoTV="show.vote_average"
     />

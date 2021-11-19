@@ -7,7 +7,16 @@
     <h3>
       {{ NomeOriginaleTV }}
     </h3>
-    <p>
+    <p v-if="LinguaOriginaleTV == 'en'">
+      <flag iso="gb" />
+    </p>
+    <p v-else-if="LinguaOriginaleTV == 'it'">
+      <flag iso="it" />
+    </p>
+    <p v-else-if="LinguaOriginaleTV == 'cn'">
+      <flag iso="cn" />
+    </p>
+    <p v-else>
       {{ LinguaOriginaleTV }}
     </p>
     <p>
@@ -30,11 +39,4 @@ export default {
 
 
 <style lang="scss">
-.cont {
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px auto;
-}
 </style>

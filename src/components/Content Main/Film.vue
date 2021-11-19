@@ -7,7 +7,16 @@
     <h3>
       {{ NomeOriginale }}
     </h3>
-    <p>
+    <p v-if="LinguaOriginale == 'en'">
+      <flag iso="gb" />
+    </p>
+    <p v-else-if="LinguaOriginale == 'it'">
+      <flag iso="it" />
+    </p>
+    <p v-else-if="LinguaOriginale == 'cn'">
+      <flag iso="cn" />
+    </p>
+    <p v-else>
       {{ LinguaOriginale }}
     </p>
     <p>
@@ -32,7 +41,8 @@ export default {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   margin: 20px auto;
 }
 </style>
