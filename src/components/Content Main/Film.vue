@@ -7,21 +7,10 @@
     <h3>
       {{ NomeOriginale }}
     </h3>
-    <p v-if="LinguaOriginale == 'en'">
-      <flag iso="gb" />
-    </p>
-    <p v-else-if="LinguaOriginale == 'it'">
-      <flag iso="it" />
-    </p>
-    <p v-else-if="LinguaOriginale == 'cn'">
-      <flag iso="cn" />
-    </p>
-    <p v-else>
-      {{ LinguaOriginale }}
-    </p>
-    <p>
-      {{ Voto }}
-    </p>
+    <p v-if="LinguaOriginale == 'en'"><flag iso="gb" /> | {{ Voto }}</p>
+    <p v-else-if="LinguaOriginale == 'it'"><flag iso="it" /> | {{ Voto }}</p>
+    <p v-else-if="LinguaOriginale == 'cn'"><flag iso="cn" /> | {{ Voto }}</p>
+    <p v-else>{{ LinguaOriginale }} | {{ Voto }}</p>
   </div>
 </template>
 

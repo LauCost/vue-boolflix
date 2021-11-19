@@ -7,21 +7,14 @@
     <h3>
       {{ NomeOriginaleTV }}
     </h3>
-    <p v-if="LinguaOriginaleTV == 'en'">
-      <flag iso="gb" />
-    </p>
+    <p v-if="LinguaOriginaleTV == 'en'"><flag iso="gb" /> | {{ VotoTV }}</p>
     <p v-else-if="LinguaOriginaleTV == 'it'">
-      <flag iso="it" />
+      <flag iso="it" /> | {{ VotoTV }}
     </p>
     <p v-else-if="LinguaOriginaleTV == 'cn'">
-      <flag iso="cn" />
+      <flag iso="cn" /> | {{ VotoTV }}
     </p>
-    <p v-else>
-      {{ LinguaOriginaleTV }}
-    </p>
-    <p>
-      {{ VotoTV }}
-    </p>
+    <p v-else>{{ LinguaOriginaleTV }} | {{ VotoTV }}</p>
   </div>
 </template>
 
