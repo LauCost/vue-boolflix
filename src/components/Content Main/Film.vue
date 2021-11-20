@@ -7,6 +7,7 @@
     <h3>
       {{ NomeOriginale }}
     </h3>
+    <img :src="image" alt="" />
     <p v-if="LinguaOriginale == 'en'"><flag iso="gb" /> | {{ Voto }}</p>
     <p v-else-if="LinguaOriginale == 'it'"><flag iso="it" /> | {{ Voto }}</p>
     <p v-else-if="LinguaOriginale == 'cn'"><flag iso="cn" /> | {{ Voto }}</p>
@@ -21,6 +22,7 @@ export default {
     NomeOriginale: String,
     LinguaOriginale: String,
     Voto: Number,
+    image: String,
   },
 };
 </script>
@@ -29,6 +31,7 @@ export default {
 .cont {
   width: 50%;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;

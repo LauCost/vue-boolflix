@@ -8,6 +8,7 @@
       :NomeOriginale="film.original_title"
       :LinguaOriginale="film.original_language"
       :Voto="film.vote_average"
+      :image="'https://image.tmdb.org/t/p/w500/' + film.poster_path"
     />
     <TvShows
       v-for="show in shows"
@@ -16,6 +17,7 @@
       :NomeOriginaleTV="show.original_name"
       :LinguaOriginaleTV="show.original_language"
       :VotoTV="show.vote_average"
+      :imageTV="'https://image.tmdb.org/t/p/w500/' + show.poster_path"
     />
   </main>
 </template>

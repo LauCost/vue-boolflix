@@ -7,6 +7,7 @@
     <h3>
       {{ NomeOriginaleTV }}
     </h3>
+    <img :src="imageTV" alt="" />
     <p v-if="LinguaOriginaleTV == 'en'"><flag iso="gb" /> | {{ VotoTV }}</p>
     <p v-else-if="LinguaOriginaleTV == 'it'">
       <flag iso="it" /> | {{ VotoTV }}
@@ -26,6 +27,7 @@ export default {
     NomeOriginaleTV: String,
     LinguaOriginaleTV: String,
     VotoTV: Number,
+    imageTV: String,
   },
 };
 </script>
