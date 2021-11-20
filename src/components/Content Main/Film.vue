@@ -36,5 +36,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin: 20px auto;
+
+  img {
+    width: 100%;
+  }
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
   <main>
-    <Search @search-film="getTitle" />
     <Movie
       v-for="film in movies"
       :key="film.id"
@@ -23,47 +22,17 @@
 </template>
 
 <script>
-import axios from "axios";
 import Movie from "./Content Main/Film.vue";
-import Search from "./Content Main/SearchBar.vue";
 import TvShows from "./Content Main/TvShows.vue";
 export default {
-  data() {
-    return {
-      movies: [],
-      shows: [],
-    };
+  props: {
+    movies: Array,
+    shows: Array,
   },
 
   components: {
     Movie,
-    Search,
     TvShows,
-  },
-
-  methods: {
-    getTitle(text) {
-      console.log(text);
-      axios
-        .get(
-          "https://api.themoviedb.org/3/search/movie?api_key=58ebf4fc2efccc2902a38beabf175722&language=en-US&query=" +
-            text +
-            "&page=1&include_adult=false"
-        )
-        .then((r) => {
-          this.movies = r.data.results;
-        });
-
-      axios
-        .get(
-          "https://api.themoviedb.org/3/search/tv?api_key=58ebf4fc2efccc2902a38beabf175722&language=en-US&page=1&query=" +
-            text +
-            "&include_adult=false"
-        )
-        .then((res) => {
-          this.shows = res.data.results;
-        });
-    },
   },
 };
 </script>
