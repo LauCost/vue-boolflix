@@ -1,8 +1,13 @@
 <template>
   <Header>
     <div class="search">
-      <input v-model="searchString" type="text" placeholder="Search.." />
-      <button @click="$emit('search-film', searchString)">Search</button>
+      <input
+        v-model="searchString"
+        type="text"
+        placeholder="Search Film and TV Shows"
+        @keyup.enter="$emit('search-film', searchString)"
+      />
+      <!-- <button @click="$emit('search-film', searchString)">Search</button> -->
     </div>
   </Header>
 </template>
