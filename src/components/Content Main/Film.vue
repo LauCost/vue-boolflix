@@ -1,6 +1,6 @@
 <template>
   <div class="cont">
-    <img :src="image" alt="" />
+    <img :src="image" alt="Img non trovato" />
     <div class="hover">
       <h2>Films</h2>
       <p>Title: {{ Titolo }}</p>
@@ -84,7 +84,7 @@ export default {
   }
 }
 
-img:hover {
+.cont:hover img {
   display: none;
 }
 
