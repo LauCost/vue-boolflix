@@ -1,6 +1,7 @@
 <template>
   <Header>
     <div class="search">
+      <h1>BOOLFLIX</h1>
       <input
         v-model="searchString"
         type="text"
@@ -25,25 +26,30 @@ export default {
 
 <style lang="scss">
 header {
-  background-color: #2e3a46;
+  background-color: #000000;
 }
 
 .search {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+
+  h1 {
+    color: #a00000;
+  }
   input {
     margin: 30px 0;
-    width: 50%;
-    padding: 20px 0;
+    width: 20%;
+    padding: 20px 0 20px 10px;
     font-size: 25px;
   }
 
-  button {
+  /* button {
     margin: 30px 10px;
     padding: 30px;
     border: none;
     background-color: #fff;
     font-size: 25px;
-  }
+  } */
 }
 </style>

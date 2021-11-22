@@ -71,7 +71,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 15px;
-  background-color: black;
+  background-color: #000000;
   height: 450px;
 
   img {

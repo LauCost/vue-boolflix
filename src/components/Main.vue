@@ -46,6 +46,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  min-height: 84.6vh;
+  min-height: calc(100vh - 133px);
 }
 </style>
