@@ -13,7 +13,7 @@
     <TvShows
       v-for="show in shows"
       :key="show.id"
-      :imageTV="'https://image.tmdb.org/t/p/w500/' + show.poster_path"
+      :imageTV="'https://image.tmdb.org/t/p/w500' + show.poster_path"
       :TitoloTV="show.name"
       :NomeOriginaleTV="show.original_name"
       :LinguaOriginaleTV="show.original_language"

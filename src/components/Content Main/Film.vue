@@ -20,7 +20,7 @@
         Original language: <flag iso="cn" />
       </p>
       <p v-else>Original language: {{ LinguaOriginale }}</p>
-      <p>Overview: {{ trama }}</p>
+      <p>Overview: {{ lessOverview(trama) }}</p>
     </div>
   </div>
 </template>
@@ -51,6 +51,13 @@ export default {
         }
       }
       return listStar;
+    },
+
+    lessOverview(trama) {
+      if (trama.length > 200) {
+        return trama.slice(0, 200) + "...";
+      }
+      return trama;
     },
   },
 };

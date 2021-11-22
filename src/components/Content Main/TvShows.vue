@@ -3,25 +3,26 @@
     <img :src="imageTV" alt="" />
     <div class="hover">
       <h2>TV Shows</h2>
+      <p>Title: {{ TitoloTV }}</p>
+      <p>Original title: {{ NomeOriginaleTV }}</p>
       <p>
-        {{ TitoloTV }}
-      </p>
-      <p>
-        {{ NomeOriginaleTV }}
-      </p>
-      <p v-if="LinguaOriginaleTV == 'en'"><flag iso="gb" /></p>
-      <p v-else-if="LinguaOriginaleTV == 'it'">
-        <flag iso="it" />
-      </p>
-      <p v-else-if="LinguaOriginaleTV == 'cn'">
-        <flag iso="cn" />
-      </p>
-      <p v-else>{{ LinguaOriginaleTV }}</p>
-      <p>
-        <span v-for="(star, i) in getRightVote(Voto)" :key="i">
+        Vote:
+
+        <span v-for="(star, i) in getRightVote(VotoTV)" :key="i">
           <i :class="star"></i>
         </span>
       </p>
+      <p v-if="LinguaOriginaleTV == 'en'">
+        Original language: <flag iso="gb" />
+      </p>
+      <p v-else-if="LinguaOriginaleTV == 'it'">
+        Original language: <flag iso="it" />
+      </p>
+      <p v-else-if="LinguaOriginaleTV == 'cn'">
+        Original language: <flag iso="cn" />
+      </p>
+      <p v-else>Original language: {{ LinguaOriginaleTV }}</p>
+      <p>Overview: {{ lessOverview(tramaTV) }}</p>
     </div>
   </div>
 </template>
@@ -35,6 +36,7 @@ export default {
     LinguaOriginaleTV: String,
     VotoTV: Number,
     imageTV: String,
+    tramaTV: String,
   },
 
   methods: {
@@ -52,6 +54,13 @@ export default {
         }
       }
       return listStar;
+    },
+
+    lessOverview(tramaTV) {
+      if (tramaTV.length > 200) {
+        return tramaTV.slice(0, 200) + "...";
+      }
+      return tramaTV;
     },
   },
 };
