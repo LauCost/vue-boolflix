@@ -1,25 +1,27 @@
 <template>
   <div class="cont">
-    <h1>Films</h1>
-    <h2>
-      {{ Titolo }}
-    </h2>
-    <h3>
-      {{ NomeOriginale }}
-    </h3>
     <img :src="image" alt="" />
-    <p v-if="LinguaOriginale == 'en'"><flag iso="gb" /></p>
-    <p v-else-if="LinguaOriginale == 'it'"><flag iso="it" /></p>
-    <p v-else-if="LinguaOriginale == 'cn'"><flag iso="cn" /></p>
-    <p v-else>{{ LinguaOriginale }}</p>
-    <p>
-      {{ Voto }}
-    </p>
-    <p>
-      <span v-for="(star, i) in getRightVote(Voto)" :key="i">
-        <i :class="star"></i>
-      </span>
-    </p>
+    <div class="hover">
+      <h2>Films</h2>
+      <p>Title: {{ Titolo }}</p>
+      <p>Original title: {{ NomeOriginale }}</p>
+      <p>
+        Vote:
+
+        <span v-for="(star, i) in getRightVote(Voto)" :key="i">
+          <i :class="star"></i>
+        </span>
+      </p>
+      <p v-if="LinguaOriginale == 'en'">Original language: <flag iso="gb" /></p>
+      <p v-else-if="LinguaOriginale == 'it'">
+        Original language: <flag iso="it" />
+      </p>
+      <p v-else-if="LinguaOriginale == 'cn'">
+        Original language: <flag iso="cn" />
+      </p>
+      <p v-else>Original language: {{ LinguaOriginale }}</p>
+      <p>Overview: {{ trama }}</p>
+    </div>
   </div>
 </template>
 
@@ -31,6 +33,7 @@ export default {
     LinguaOriginale: String,
     Voto: Number,
     image: String,
+    trama: String,
   },
 
   methods: {
@@ -55,16 +58,37 @@ export default {
 
 <style lang="scss">
 .cont {
-  width: 50%;
+  width: 13%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  margin: 20px auto;
+  margin: 15px;
+  background-color: black;
+  height: 450px;
 
   img {
     width: 100%;
+    height: 100%;
   }
+
+  .hover {
+    display: none;
+    padding: 20px 0;
+  }
+
+  p,
+  h2 {
+    margin: 5px 10px;
+    color: #fff;
+  }
+}
+
+img:hover {
+  display: none;
+}
+
+.cont:hover .hover {
+  display: block;
 }
 </style>
