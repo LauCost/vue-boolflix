@@ -1,6 +1,6 @@
 <template>
   <div class="cont">
-    <img :src="image" alt="Img non trovato" />
+    <img :src="image" alt="" />
     <div class="hover">
       <h2>Films</h2>
       <p>Title: {{ Titolo }}</p>
@@ -54,8 +54,8 @@ export default {
     },
 
     lessOverview(trama) {
-      if (trama.length > 200) {
-        return trama.slice(0, 200) + "...";
+      if (trama.length > 350) {
+        return trama.slice(0, 350) + "...";
       }
       return trama;
     },

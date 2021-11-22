@@ -57,8 +57,8 @@ export default {
     },
 
     lessOverview(tramaTV) {
-      if (tramaTV.length > 200) {
-        return tramaTV.slice(0, 200) + "...";
+      if (tramaTV.length > 350) {
+        return tramaTV.slice(0, 350) + "...";
       }
       return tramaTV;
     },

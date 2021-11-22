@@ -3,7 +3,7 @@
     <Movie
       v-for="film in movies"
       :key="film.id"
-      :image="'https://image.tmdb.org/t/p/w500' + film.poster_path"
+      :image="'https://image.tmdb.org/t/p/w500/' + film.poster_path"
       :Titolo="film.title"
       :NomeOriginale="film.original_title"
       :LinguaOriginale="film.original_language"
@@ -13,11 +13,12 @@
     <TvShows
       v-for="show in shows"
       :key="show.id"
-      :imageTV="'https://image.tmdb.org/t/p/w500' + show.poster_path"
+      :imageTV="'https://image.tmdb.org/t/p/w500/' + show.poster_path"
       :TitoloTV="show.name"
       :NomeOriginaleTV="show.original_name"
       :LinguaOriginaleTV="show.original_language"
       :VotoTV="show.vote_average"
+      :tramaTV="show.overview"
     />
   </main>
 </template>
